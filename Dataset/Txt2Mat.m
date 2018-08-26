@@ -1,0 +1,14 @@
+%fid = fopen('Aggregation.txt');
+%fid = fopen('Spiral.txt');
+%fid = fopen('D31.txt');
+%data = textscan(fid,'%f%f%f%f%f%f%f');
+%A = [data{1,1} data{1,2} data{1,3}];
+datatable = importdata('nba.txt');
+A = [datatable.data(:,15),datatable.data(:,19)];
+X = A(:,1:2);
+data.A = X;
+data.name = datatable.textdata;
+%IDX = A(:,3);
+%save nba.mat data;
+plot(A(:,1),A(:,2),'x','Color','red');
+%PlotClusterinResult(X, IDX);
